@@ -15,7 +15,7 @@
  */
 
 
-package main.java.com.example.echo;
+package com.example.echo;
 
 /**
  * The email bean that will be used in the getUserEmail response.

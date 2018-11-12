@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package main.java.com.example.echo;
+package com.example.echo;
 
 
 import com.google.api.server.spi.auth.EspAuthenticator;
