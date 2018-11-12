@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.echo;
+package main.java.com.example.echo;
 
 
 import com.google.api.server.spi.auth.EspAuthenticator;
@@ -177,7 +177,7 @@ public class Echo {
     if (user == null) {
       throw new UnauthorizedException("Invalid credentials");
     }
-
+    
     Email response = new Email();
     response.setEmail(user.getEmail());
     return response;
