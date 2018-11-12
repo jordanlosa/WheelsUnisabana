@@ -51,19 +51,19 @@
     <!-- Compile/runtime dependencies -->
     <dependency>
       <groupId>com.google.endpoints</groupId>
-      <artifactId>endpoints-framework</artifactId>
+      <artifactId>endpoints-framework</artifactId><!---->
       <version>${endpoints.framework.version}</version>
     </dependency>
     <!-- [START api_management] -->
     <dependency>
       <groupId>com.google.endpoints</groupId>
-      <artifactId>endpoints-management-control-appengine-all</artifactId>
+      <artifactId>endpoints-management-control-appengine-all</artifactId><!---->
       <version>1.0.10</version>
     </dependency>
     <!-- [END api_management] -->
     <dependency>
       <groupId>com.google.appengine</groupId>
-      <artifactId>appengine-api-1.0-sdk</artifactId>
+      <artifactId>appengine-api-1.0-sdk</artifactId><!---->
       <version>1.9.64</version>
     </dependency>
     <dependency>
