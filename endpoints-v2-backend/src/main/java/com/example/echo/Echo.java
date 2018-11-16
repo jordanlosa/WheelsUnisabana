@@ -17,6 +17,10 @@
 package com.example.echo;
 
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+
 import com.google.api.server.spi.auth.EspAuthenticator;
 import com.google.api.server.spi.auth.common.User;
 import com.google.api.server.spi.config.AnnotationBoolean;
@@ -28,6 +32,8 @@ import com.google.api.server.spi.config.ApiNamespace;
 import com.google.api.server.spi.config.Named;
 import com.google.api.server.spi.config.Nullable;
 import com.google.api.server.spi.response.UnauthorizedException;
+
+
 
 /**
  * The Echo API which Endpoints will be exposing.
@@ -46,18 +52,25 @@ import com.google.api.server.spi.response.UnauthorizedException;
     issuers = {
         @ApiIssuer(
             name = "firebase",
-            issuer = "https://securetoken.google.com/YOUR-PROJECT-ID",
+            issuer = "https://securetoken.google.com/wheels20181019",
             jwksUri =
                 "https://www.googleapis.com/service_accounts/v1/metadata/x509/securetoken@system"
                     + ".gserviceaccount.com"
         )
-    }
+    },
+    		issuerAudiences = {
+    		        @ApiIssuerAudience(name = "firebase", audiences = "wheels20181019")
+    		    }
 // [END_EXCLUDE]
 )
 // [END echo_api_annotation]
 
 public class Echo {
-
+	
+	private ArrayList<Reserva> reservas = new ArrayList<Reserva>();
+	private HashMap<String,Reserva> reservashash = new HashMap<>();
+	
+	
   /**
    * Echoes the received message back. If n is a non-negative integer, the message is copied that
    * many times in the returned message.
@@ -72,10 +85,37 @@ public class Echo {
   @ApiMethod(name = "echo")
   public Message echo(Message message, @Named("n") @Nullable Integer n) {
     return doEcho(message, n);
-  }
-  // [END echo_method]
-
-  /**
+  }  
+  // [END echo_method]  
+ 
+  
+//[START echo_method]
+ @ApiMethod(name = "reser", path = "reserva")
+ public Reserva reser(Reserva reserva, @Named("n") @Nullable Integer n) {
+	 this.reservas.add(reserva);
+	 this.reservashash.put(n.toString(),reserva);
+   return doreserva(reserva,n);
+ }  
+ // [END echo_method]
+ @ApiMethod(name = "Listreser", path = "Listreserva",httpMethod = ApiMethod.HttpMethod.GET)
+ public HashMap<String,Reserva> Listreser() {	 
+   return this.reservashash;
+ }  
+ private Reserva doreserva(Reserva reserva,Integer n) {	   
+	 if (n != null && n >= 0) {
+	      StringBuilder sb = new StringBuilder();
+	      for (int i = 0; i < n; i++) {
+	        if (i > 0) {
+	          sb.append(" ");
+	        }
+	        sb.append(reserva.getHora());
+	      }
+	      reserva.setHora(sb.toString());
+	    }
+	    
+	    return reserva;
+	  }
+/**
    * Echoes the received message back. If n is a non-negative integer, the message is copied that
    * many times in the returned message.
    *
@@ -169,7 +209,7 @@ public class Echo {
       issuerAudiences = {
           @ApiIssuerAudience(
               name = "firebase",
-              audiences = {"YOUR-PROJECT-ID"}
+              audiences = {"wheels20181019"}
           )
       }
   )

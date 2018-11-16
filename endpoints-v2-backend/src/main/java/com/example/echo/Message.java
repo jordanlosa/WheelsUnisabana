@@ -23,8 +23,18 @@ package com.example.echo;
 public class Message {
 
   private String message;
+  private int ID;
 
-  public String getMessage() {
+  
+  public int getID() {
+	return ID;
+}
+
+public void setID(int iD) {
+	ID = iD;
+}
+
+public String getMessage() {
     return this.message;
   }
 
