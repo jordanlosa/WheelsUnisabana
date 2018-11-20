@@ -1,14 +1,15 @@
 package com.example.echo;
 
-public class Pasajero extends Usuario {
+public class Conductor extends Usuario {
 
-	public Pasajero() {
+	public Conductor() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Pasajero(String nombre, String correo, String contrasena, String tipo) {
+	public Conductor(String nombre, String correo, String contrasena, String tipo) {
 		super(nombre, correo, contrasena, tipo);
 		// TODO Auto-generated constructor stub
 	}
+	
 }

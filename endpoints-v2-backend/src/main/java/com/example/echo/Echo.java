@@ -18,8 +18,6 @@ package com.example.echo;
 
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
 
 import com.google.api.server.spi.auth.EspAuthenticator;
 import com.google.api.server.spi.auth.common.User;
@@ -67,8 +65,7 @@ import com.google.api.server.spi.response.UnauthorizedException;
 
 public class Echo {
 	
-	private ArrayList<Reserva> reservas = new ArrayList<Reserva>();
-	private HashMap<String,Reserva> reservashash = new HashMap<>();
+	private ArrayList<Reserva> reservas = new ArrayList<Reserva>();	
 	
 	
   /**
@@ -92,14 +89,13 @@ public class Echo {
 //[START echo_method]
  @ApiMethod(name = "reser", path = "reserva")
  public Reserva reser(Reserva reserva, @Named("n") @Nullable Integer n) {
-	 this.reservas.add(reserva);
-	 this.reservashash.put(n.toString(),reserva);
+	 this.reservas.add(reserva);	 
    return doreserva(reserva,n);
  }  
  // [END echo_method]
  @ApiMethod(name = "Listreser", path = "Listreserva",httpMethod = ApiMethod.HttpMethod.GET)
- public HashMap<String,Reserva> Listreser() {	 
-   return this.reservashash;
+ public ArrayList<Reserva> Listreser() {	 
+   return this.reservas;
  }  
  private Reserva doreserva(Reserva reserva,Integer n) {	   
 	 if (n != null && n >= 0) {
