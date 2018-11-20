@@ -45,20 +45,7 @@ import com.google.api.server.spi.response.UnauthorizedException;
         ownerDomain = "echo.example.com",
         ownerName = "echo.example.com",
         packagePath = ""
-    ),
-    // [START_EXCLUDE]
-    issuers = {
-        @ApiIssuer(
-            name = "firebase",
-            issuer = "https://securetoken.google.com/wheels20181019",
-            jwksUri =
-                "https://www.googleapis.com/service_accounts/v1/metadata/x509/securetoken@system"
-                    + ".gserviceaccount.com"
-        )
-    },
-    		issuerAudiences = {
-    		        @ApiIssuerAudience(name = "firebase", audiences = "wheels20181019")
-    		    }
+    )  
 // [END_EXCLUDE]
 )
 // [END echo_api_annotation]
