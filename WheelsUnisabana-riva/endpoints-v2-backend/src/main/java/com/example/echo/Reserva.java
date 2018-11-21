@@ -7,13 +7,15 @@ public class Reserva {
 	Double PuntoEncuentrox;
 	Double PuntoEncuentroy;
 	int Valor;
+	int Id;
 	
-	public Reserva(Usuario pasajero, String ruta, Double puntoEncuentrox, Double puntoEncuentroy, int valor) {		
+	public Reserva(Usuario pasajero, String ruta, Double puntoEncuentrox, Double puntoEncuentroy, int valor, int id) {		
 		Pasajero = pasajero;
 		Ruta = ruta;
 		PuntoEncuentrox = puntoEncuentrox;
 		PuntoEncuentroy = puntoEncuentroy;
 		Valor = valor;
+		Id = id;
 	}
 	
 	public Reserva() {
@@ -50,5 +52,10 @@ public class Reserva {
 	public void setValor(int valor) {
 		Valor = valor;
 	}
-	
+	public int getId() {
+		return Id;
+	}
+	public void setId(int id) {
+		Id = id;
+	}
 }

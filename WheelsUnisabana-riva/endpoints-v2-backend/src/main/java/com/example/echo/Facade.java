@@ -42,12 +42,12 @@ public class Facade
 	ArrayList<Usuario> usuarios= new ArrayList<Usuario>(); 
 
 	//[START echo_method]
-	 @ApiMethod(name = "reser", path = "reserva")
-	 public void eliminarReserva(Reserva reserva)
+	 @ApiMethod(name = "eliminar", path = "reservaelim")
+	 public void eliminarReserva(int idReserva)
 	 {
 		 for (int i = 0; i < reservas.size(); i++) 
 		 {
-			if(reserva.equals(reservas.get(i)))
+			if(idReserva==reservas.get(i).getId())
 			{
 				reservas.remove(i);
 			}	
