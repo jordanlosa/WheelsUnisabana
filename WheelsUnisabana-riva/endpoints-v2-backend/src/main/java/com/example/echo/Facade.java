@@ -43,17 +43,15 @@ public class Facade
 
 	//[START echo_method]
 	 @ApiMethod(name = "reser", path = "reserva")
-	 public boolean eliminarReserva(Reserva reserva)
+	 public void eliminarReserva(Reserva reserva)
 	 {
 		 for (int i = 0; i < reservas.size(); i++) 
 		 {
 			if(reserva.equals(reservas.get(i)))
 			{
 				reservas.remove(i);
-				return true;
 			}	
 		 }
-		 return false;
 	 }  
 	 // [END echo_method]
 
