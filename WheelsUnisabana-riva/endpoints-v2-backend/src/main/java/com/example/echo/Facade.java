@@ -6,6 +6,7 @@ import java.util.HashMap;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiIssuer;
 import com.google.api.server.spi.config.ApiIssuerAudience;
+import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 
 @Api(
@@ -40,5 +41,20 @@ public class Facade
 	HashMap<Long,String> sesiones = new HashMap<Long,String>();
 	ArrayList<Usuario> usuarios= new ArrayList<Usuario>(); 
 
+	//[START echo_method]
+	 @ApiMethod(name = "reser", path = "reserva")
+	 public boolean eliminarReserva(Reserva reserva)
+	 {
+		 for (int i = 0; i < reservas.size(); i++) 
+		 {
+			if(reserva.equals(reservas.get(i)))
+			{
+				reservas.remove(i);
+				return true;
+			}	
+		 }
+		 return false;
+	 }  
+	 // [END echo_method]
 
 }
