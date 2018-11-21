@@ -1,4 +1,4 @@
-package main.java.com.example.echo;
+package com.example.echo;
 
 public class Reserva {
 
