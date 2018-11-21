@@ -1,6 +1,5 @@
-package com.example.echo;
+package main.java.com.example.echo;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 

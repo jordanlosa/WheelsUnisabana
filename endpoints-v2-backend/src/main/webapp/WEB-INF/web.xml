@@ -26,7 +26,7 @@
         <servlet-class>com.google.api.server.spi.EndpointsServlet</servlet-class>
         <init-param>
             <param-name>services</param-name>
-            <param-value>com.example.echo.Facade,com.example.echo.Proxy</param-value>                         
+            <param-value>main.java.com.example.echo.Proxy</param-value>                         
         </init-param>  
     </servlet>
     

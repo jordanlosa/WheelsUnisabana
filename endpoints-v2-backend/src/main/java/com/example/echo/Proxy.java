@@ -1,10 +1,10 @@
-package com.example.echo;
+package main.java.com.example.echo;
 
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import com.example.echo.Facade;
+import main.java.com.example.echo.Facade;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
