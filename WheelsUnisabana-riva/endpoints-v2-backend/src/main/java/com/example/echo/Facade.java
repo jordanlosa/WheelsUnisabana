@@ -8,6 +8,7 @@ import com.google.api.server.spi.config.ApiIssuer;
 import com.google.api.server.spi.config.ApiIssuerAudience;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
+import com.google.api.server.spi.config.Named;
 
 @Api(
 	    name = "facade",
@@ -43,7 +44,7 @@ public class Facade
 
 	//[START echo_method]
 	 @ApiMethod(name = "eliminar", path = "reservaelim")
-	 public void eliminarReserva(int idReserva)
+	 public void eliminarReserva(@Named("n") Integer idReserva)
 	 {
 		 for (int i = 0; i < reservas.size(); i++) 
 		 {
