@@ -1,14 +1,16 @@
-package main.java.com.example.echo;
+package com.example.echo;
 
 public class Reserva {
 
- 	Usuario Pasajero;
- 	String Ruta;
+	int ID;
+ 	int Pasajero;
+ 	int Ruta;
 	Double PuntoEncuentrox;
 	Double PuntoEncuentroy;
 	int Valor;
 	
-	public Reserva(Usuario pasajero, String ruta, Double puntoEncuentrox, Double puntoEncuentroy, int valor) {		
+	public Reserva(int id,int pasajero, int ruta, Double puntoEncuentrox, Double puntoEncuentroy, int valor) {
+		ID = id;
 		Pasajero = pasajero;
 		Ruta = ruta;
 		PuntoEncuentrox = puntoEncuentrox;
@@ -20,16 +22,16 @@ public class Reserva {
 		
 	}
 
-	public Usuario getPasajero() {
+	public int getPasajero() {
 		return Pasajero;
 	}
-	public void setPasajero(Usuario pasajero) {
+	public void setPasajero(int pasajero) {
 		Pasajero = pasajero;
 	}
-	public String getRuta() {
+	public int getRuta() {
 		return Ruta;
 	}
-	public void setRuta(String ruta) {
+	public void setRuta(int ruta) {
 		Ruta = ruta;
 	}
 	public Double getPuntoEncuentrox() {

@@ -8,7 +8,7 @@ public class Pasajero extends Usuario {
 	}
 
 	public Pasajero(String nombre, String correo, String contrasena, String tipo) {
-		super(nombre, correo, contrasena, tipo);
+		super(nombre, correo, contrasena, tipo);	
 		// TODO Auto-generated constructor stub
 	}
 }
