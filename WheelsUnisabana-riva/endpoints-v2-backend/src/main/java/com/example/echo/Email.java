@@ -15,20 +15,20 @@
  */
 
 
-package com.example.echo;
+package main.java.com.example.echo;
 
 /**
- * The message bean that will be used in the echo request and response.
+ * The email bean that will be used in the getUserEmail response.
  */
-public class Message {
+public class Email {
 
-  private String message;
+  private String email;
 
-  public String getMessage() {
-    return this.message;
+  public String getEmail() {
+    return this.email;
   }
 
-  public void setMessage(String message) {
-    this.message = message;
+  public void setEmail(String email) {
+    this.email = email;
   }
 }

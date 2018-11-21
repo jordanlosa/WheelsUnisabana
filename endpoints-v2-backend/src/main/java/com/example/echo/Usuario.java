@@ -1,4 +1,4 @@
-package com.example.echo;
+package main.java.com.example.echo;
 
 public abstract class Usuario implements IUsuario {
 	

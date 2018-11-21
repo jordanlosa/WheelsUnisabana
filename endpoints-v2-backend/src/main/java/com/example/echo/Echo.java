@@ -85,7 +85,7 @@ public class Echo {
   }  
   // [END echo_method]  
  
-/*  
+  
 //[START echo_method]
  @ApiMethod(name = "reser", path = "reserva")
  public Reserva reser(Reserva reserva, @Named("n") @Nullable Integer n) {
