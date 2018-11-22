@@ -48,7 +48,7 @@ public class Facade
 	
 	//[START echo_method]
 	 @ApiMethod(name = "eliminar", path = "reservaelim")
-	 public void eliminarReserva(@Named("n") Integer idReserva)
+	 public ArrayList eliminarReserva(@Named("n") Integer idReserva)
 	 {
 		 usuarios.add(pas);
 		 reservas.add(res);
@@ -61,6 +61,8 @@ public class Facade
 				reservas.remove(i);
 			}	
 		 }
+		 
+		 return reservas;
 	 }  
 	 // [END echo_method]
 
