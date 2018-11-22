@@ -42,18 +42,32 @@ public class Facade
 	HashMap<Long,String> sesiones = new HashMap<Long,String>();
 	ArrayList<Usuario> usuarios= new ArrayList<Usuario>(); 
 
-	Pasajero pas = new Pasajero("Juan", "juan", "juan", "pasajero");
-	Reserva res = new Reserva(pas,"Ruta 1", 2.0, 2.0, 55, 1);
-	Reserva res1 = new Reserva(pas,"Ruta 2", 3.0, 3.0, 33, 4);
 	
 	//[START echo_method]
-	 @ApiMethod(name = "eliminar", path = "reservaelim")
-	 public ArrayList eliminarReserva(@Named("n") Integer idReserva)
+	 @ApiMethod(name = "add", path = "reservaadd")
+	 public void añadir()
 	 {
-		 usuarios.add(pas);
-		 reservas.add(res);
-		 reservas.add(res1);
-		 
+		Pasajero pas = new Pasajero("Juan", "juan", "juan", "pasajero");
+		Reserva res = new Reserva(pas,"Ruta 1", 2.0, 2.0, 55, 1);
+		Reserva res1 = new Reserva(pas,"Ruta 2", 3.0, 3.0, 33, 4);
+		usuarios.add(pas);
+		reservas.add(res);
+		reservas.add(res1);
+	 }  
+	// [END echo_method]
+	 
+	//[START echo_method]
+	 @ApiMethod(name = "mostrar", path = "reservamostrar")
+	 public ArrayList mostrar()
+	 {
+		 return reservas;
+	 }  
+	// [END echo_method]
+	 
+	//[START echo_method]
+	 @ApiMethod(name = "eliminar", path = "reservaelim")
+	 public void eliminarReserva(@Named("n") Integer idReserva)
+	 {
 		 for (int i = 0; i < reservas.size(); i++) 
 		 {
 			if(idReserva==reservas.get(i).getId())
@@ -61,8 +75,6 @@ public class Facade
 				reservas.remove(i);
 			}	
 		 }
-		 
-		 return reservas;
 	 }  
 	 // [END echo_method]
 
