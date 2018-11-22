@@ -77,5 +77,10 @@ public class Facade
 		 }
 	 }  
 	 // [END echo_method]
-
+	 
+	 @ApiMethod(name = "ListarReserva", path = "ListarReserva")
+		public ArrayList<Reserva> ListarReserva()
+		{
+			 return this.reservas;
+		}
 }
