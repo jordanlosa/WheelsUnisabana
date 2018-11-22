@@ -15,6 +15,10 @@ import com.google.api.server.spi.config.Named;
 import com.google.api.server.spi.config.Nullable;
 import com.google.api.server.spi.response.UnauthorizedException;
 
+import main.java.com.example.echo.Pasajero;
+import main.java.com.example.echo.Reserva;
+import main.java.com.example.echo.Usuario;
+
 @Api(
 	    name = "facade",
 	    version = "v1",
@@ -38,6 +42,23 @@ private ArrayList<Usuario> usuario;
 		
 		Usuario usu = new Pasajero(Nombre,Correo, contrasena,tipo);
 		usuario.add(usu);
+	}
+	
+Usuario pas = new Pasajero();
+	
+	
+	@ApiMethod (name = "listarUsuario", path = "reserva list")
+	public ArrayList<Reserva> listarReserva (@Named String nombreP) {
+			
+		ArrayList<Reserva> reservs = new ArrayList<>();
+		for (int x=0; x < this.reservas.size(); x++) {
+			if (reservas.get(x).getPasajero().getNombre().equals(nombreP)) {
+				reservs.add(reservas.get(x));
+			}
+			
+		}
+
+		return reservs;	
 	}
 
 }
