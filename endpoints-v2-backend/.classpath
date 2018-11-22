@@ -17,5 +17,11 @@
 	<classpathentry kind="lib" path="C:/Users/JORDAN/git/endpoints-framework-2.2.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/JORDAN/git/endpoints-management-control-appengine-all-1.0.11.jar"/>
 	<classpathentry kind="lib" path="C:/Users/JORDAN/git/endpoints-framework-maven-plugin-2.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/camca/OneDrive/Escritorio/OneDrive-2018-11-20/appengine-api-1.0-sdk-1.9.67.jar"/>
+	<classpathentry kind="lib" path="C:/Users/camca/OneDrive/Escritorio/OneDrive-2018-11-20/endpoints-framework-2.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/camca/OneDrive/Escritorio/OneDrive-2018-11-20/endpoints-framework-maven-plugin-2.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/camca/OneDrive/Escritorio/OneDrive-2018-11-20/endpoints-framework-tools-2.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/camca/OneDrive/Escritorio/OneDrive-2018-11-20/endpoints-management-config-1.0.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/camca/OneDrive/Escritorio/OneDrive-2018-11-20/endpoints-management-control-appengine-all-1.0.11.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

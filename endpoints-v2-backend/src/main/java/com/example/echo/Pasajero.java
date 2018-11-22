@@ -1,4 +1,4 @@
-package com.example.echo;
+package main.java.com.example.echo;
 
 public class Pasajero extends Usuario {
 
@@ -9,6 +9,6 @@ public class Pasajero extends Usuario {
 
 	public Pasajero(String nombre, String correo, String contrasena, String tipo) {
 		super(nombre, correo, contrasena, tipo);
-		// TODO Auto-generated constructor stub
+		
 	}
 }
