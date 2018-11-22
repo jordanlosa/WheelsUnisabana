@@ -18,7 +18,7 @@ public class Facade {
 	{
 		for (int i=0; i < reservas.size(); i++) {
 			
-			if(reservas.get(i).getPasajero().getNombre().equals(Pasajero)) {
+			if(reservas.get(i).IDreserva== IDreserva) {
 				
 				reservas.get(i).setPuntoEncuentrox(PuntoX);
 				reservas.get(i).setPuntoEncuentroy(PuntoY);
