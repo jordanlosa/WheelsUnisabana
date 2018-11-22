@@ -42,10 +42,18 @@ public class Facade
 	HashMap<Long,String> sesiones = new HashMap<Long,String>();
 	ArrayList<Usuario> usuarios= new ArrayList<Usuario>(); 
 
+	Pasajero pas = new Pasajero("Juan", "juan", "juan", "pasajero");
+	Reserva res = new Reserva(pas,"Ruta 1", 2.0, 2.0, 55, 1);
+	Reserva res1 = new Reserva(pas,"Ruta 2", 3.0, 3.0, 33, 4);
+	
 	//[START echo_method]
 	 @ApiMethod(name = "eliminar", path = "reservaelim")
 	 public void eliminarReserva(@Named("n") Integer idReserva)
 	 {
+		 usuarios.add(pas);
+		 reservas.add(res);
+		 reservas.add(res1);
+		 
 		 for (int i = 0; i < reservas.size(); i++) 
 		 {
 			if(idReserva==reservas.get(i).getId())
