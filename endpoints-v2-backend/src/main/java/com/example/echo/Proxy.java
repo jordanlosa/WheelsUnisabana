@@ -12,7 +12,7 @@ import com.google.api.server.spi.config.Named;
 
 
 @Api(
-	    name = "facade",
+	    name = "proxy",
 	    version = "v1",
 	    namespace =
 	    @ApiNamespace(
@@ -25,8 +25,8 @@ import com.google.api.server.spi.config.Named;
 
 public class Proxy {
 	
-	ArrayList<Usuario> usuarios = new ArrayList<Usuario>();	
-	Facade sesion = Facade.reemplazar();
+	ArrayList<Usuario> usuarios = new ArrayList<Usuario>();		
+	Facade sesionf = Facade.reemplazar();
 	
 	/*
 	public void CrearPasajero(){
@@ -40,14 +40,21 @@ public class Proxy {
 	}
 	*/
         
-	@ApiMethod(name = "IniciarSesion", path = "IniciarSesion")
-	public void IniciarSesion(@Named("Usuario") String us,@Named("Contraseña") String con){
-		Long Login = null;
+	@ApiMethod(name = "IniciarSesion", path = "IniciarSesion",httpMethod="GET")
+	public Sesion IniciarSesion(@Named("Usuario") String us,@Named("Contrasena") String con){
+		Usuario admin = new Administrador();
+		admin.setCorreo("jordan");
+		admin.setContrasena("jordan");
+		usuarios.add(admin);
+		Sesion sesion = new Sesion();
+		Long Login = (Long) 12345678910L;		
 		for(Usuario persona:usuarios){
 			if(persona.getCorreo().equals(us) && persona.getContrasena().equals(con)){				
-				Login = new Random().nextLong();				
-				sesion.setSesion(us, Login);
+				Login = new Random().nextLong();
+				sesion.setLog(Login);
+				sesionf.setSesion(us, Login);
 			}
-		}		
+		}	
+		return sesion;
 	}
 }

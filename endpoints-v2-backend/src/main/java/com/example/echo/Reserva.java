@@ -20,6 +20,13 @@ public class Reserva {
 	
 	public Reserva() {
 		
+	}	
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
 	}
 
 	public int getPasajero() {
